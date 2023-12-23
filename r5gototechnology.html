@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ </head>
+   <body>
+<!-- A-Frameを読み込む -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/1.2.0/aframe.min.js"></script>
+<!-- AR.jsを読み込む -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/ar.js/2.2.2/aframe-ar.min.js"></script>
+<body style="margin : 0px; overflow: hidden;">
+ <a-scene embedded arjs vr-mode-ui="enabled: false">
+
+    <!-- a-sceneのところへ「embedded arjs」と入れないと、アスペクト比（縦横比）が狂います -->
+
+    <!-- ARマーカーが認識されたら -->
+    <a-markertype="pattern"
+	preset="custom"
+	url="/shinhsiropattern.patt">
+    <!-- 「pattern-cake_Qiita1.patt」には作成したARマーカーのファイル名を入れる -->
+
+      <!-- 画像を表示します -->
+        <a-entity
+          gltf-model=”url(technology.glb)”
+          position="0 0 0"
+          rotation="-45 0 0"
+          scale="0.5 0.5 0.5">
+        </a-entity>
+            <!-- 「cake_Qiita1.glb」には作成したGLBファイル名を入れる -->
+            <!-- position、rotation、scaleは好みで調整 -->
+
+    </a-marker>
+    <a-entity camera></a-entity>
+  </a-scene>
+ </body>
+</html>
