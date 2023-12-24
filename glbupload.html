@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3Dモデル（.glb）のアップロード</title>
+     <style>
+       div {margin-bottom: 20px;}
+      </style>
+ </head>
+<body>
+  <p>制作した3Dモデルのファイル（.glb）をアップロードします。</p>
+  
+<!-- 入力フォームのコード -->
+  <div>
+   <form action="upload_glb.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+        <label for="file">glbファイルを選択：</label>
+        <input type="file" id="file" name="file" accept=".glb">
+        <input type="submit" value="アップロード">
+   </form>
+  </div>
+</body>
+</html>
